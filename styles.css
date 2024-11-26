@@ -1,0 +1,38 @@
+body{
+    font-family: monospace;
+
+    background-image: url('./image.png');
+    background-size: cover;
+}
+h1{
+    font-family: 'Times New Roman';
+    font-style: italic;
+}
+
+h2{
+    font-family: sans-serif;
+    font-style: oblique;
+}
+
+
+h3{
+    background-color: darksalmon;
+    margin:0,5%;
+    padding: 10px;
+    color: black;
+}
+.headingArea{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    margin:auto;
+    background-color: burlywood;
+}
+.taskArea{
+    display: flex;
+    height:35px;
+    background-color: rgb(196, 191, 185);
+    font-family: Verdana;
+    color:black;
+}
