@@ -1,38 +1,84 @@
-body{
+body {
     font-family: monospace;
-
     background-image: url('./image.png');
     background-size: cover;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
 }
-h1{
+
+h1 {
     font-family: 'Times New Roman';
     font-style: italic;
+    text-align: center;
 }
 
-h2{
+h2 {
     font-family: sans-serif;
     font-style: oblique;
+    text-align: center;
 }
 
-
-h3{
+h3 {
     background-color: darksalmon;
-    margin:0,5%;
+    margin: 0.5%;
     padding: 10px;
     color: black;
+    text-align: center;
 }
-.headingArea{
+
+.headingArea {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100px;
-    margin:auto;
+    margin: auto;
     background-color: burlywood;
 }
-.taskArea{
+
+.taskArea {
     display: flex;
-    height:35px;
+    height: 50px;
     background-color: rgb(196, 191, 185);
     font-family: Verdana;
-    color:black;
+    color: black;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.taskArea input {
+    flex-grow: 1;
+    margin-right: 10px;
+    padding: 5px;
+}
+
+.task-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.task-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.task-item {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: gray;
+}
+
+button {
+    margin-left: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
 }

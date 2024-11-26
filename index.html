@@ -1,32 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content = "width=device-width, initial scale=1.0">
-        <title>TO DO list</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <div class="headingArea">
-        <header>
-            <h2 id="currentDate"> </h2>
-            <h1 id="heading"> To Do List</h1>
-        </header>
+<head>
+    <meta charset="UTF-8">
+    <title>To-Do List Application</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="headingArea">
+        <div>
+            <h2 id="currentDate"></h2>
+            <h1>To Do List</h1>
         </div>
-        <main>
-            <h3>Here we go brother, here we go!</h3>
-            <br>
-            <div class="taskArea">
-                <label for="task">Task Description:</label>
-                <textarea id="task" name="task" rows="1" columns="1" onkeypress="onPressEnter()"></textarea>
-                <button id="addtask" onclick=addTask()>Add new task</button>
-                <button id="clear">Clear</button>
-            </div>
-            <div class="taskListArea">
-            <ul id="taskList"></ul>
-            </div>
+    </div>
 
-        </main>
-        <script src="script.js"></script>
-    </body>
+    <main>
+        <h3>Here we go brother, here we go!</h3>
+
+        <div class="taskArea">
+            <input 
+                type="text" 
+                id="task" 
+                placeholder="Enter a new task" 
+                aria-label="New task input"
+            >
+            <button 
+                id="addtask" 
+                onclick="addTask()" 
+                aria-label="Add new task"
+            >
+                Add Task
+            </button>
+        </div>
+
+        <ul id="taskList" class="task-list">
+            <!-- Tasks will be dynamically added here -->
+        </ul>
+    </main>
+
+    <script src="script.js"></script>
+</body>
 </html>
