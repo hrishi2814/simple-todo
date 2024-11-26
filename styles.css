@@ -1,6 +1,6 @@
 body {
     font-family: monospace;
-    background-image: url('./image.png');
+    background-image: url('./winter.jpg');
     background-size: cover;
     max-width: 800px;
     margin: 0 auto;
@@ -20,7 +20,7 @@ h2 {
 }
 
 h3 {
-    background-color: darksalmon;
+    background-color: rgb(122, 155, 233);
     margin: 0.5%;
     padding: 10px;
     color: black;
@@ -33,13 +33,13 @@ h3 {
     align-items: center;
     height: 100px;
     margin: auto;
-    background-color: burlywood;
+    background-color: rgb(177, 179, 241);
 }
 
 .taskArea {
     display: flex;
     height: 50px;
-    background-color: rgb(196, 191, 185);
+    background-color: rgb(123, 132, 135);
     font-family: Verdana;
     color: black;
     padding: 10px;
