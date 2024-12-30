@@ -1,3 +1,6 @@
+const UNSPLASH_ACCESS_KEY = 'JeN2iGqwiEhdmfWIiHT33ZIsPYglUD_3rdfyYKSdixE'
+const BACKGROUND_UPDATE_INTERVAL = 10 * 60 * 1000;
+
 function getDate() {
     const today = new Date();
     const formattedDate = today.toDateString();
@@ -99,10 +102,45 @@ function enableEnterKeySubmission() {
         }
     });
 }
+//FUNCTION TO FETCH UNSPLASH PICS
+async function updateBackgroundFromUnsplash() {
+    try{
+        const response = await fetch('https://api.unsplash.com/photos/random?query=sun&orientation=landscape',
+            {
+                headers:{
+                    'Authorization' : `Client-ID ${UNSPLASH_ACCESS_KEY}`
+                }
+            }
+        );
+        if(!response.ok){
+            throw new Error('Failed to fetch image from Unsplash');
+        }
+        const data = await response.json();
+        const imageUrl = data.urls.full;
+
+        const img = new Image();
+        img.onload = function(){
+            document.body.style.backgroundImage = `url(${imageUrl})`;
+
+            console.log(`Photo by ${data.user.name} on Unsplash`);
+        };
+        img.src= imageUrl;
+    }
+    catch(error){
+        console.error('Error updating bg',error);
+    }
+}
+
+//dynamically updating the pics using api unsplash
+function startBackgroundUpdates(){
+    updateBackgroundFromUnsplash();
+    setInterval(updateBackgroundFromUnsplash, BACKGROUND_UPDATE_INTERVAL);
+}
 
 // Initialize the application
 document.addEventListener('DOMContentLoaded', () => {
     getDate();
     enableEnterKeySubmission();
     loadTasks();
+    startBackgroundUpdates();
 });

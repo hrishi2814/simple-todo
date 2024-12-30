@@ -1,84 +1,68 @@
 body {
     font-family: monospace;
-    background-image: url('./winter.jpg');
+    background-image: url('./perseverance.png'); /* This will be your fallback image */
     background-size: cover;
+    background-position: center;  /* Add this to better center images */
+    background-repeat: no-repeat; /* Add this to prevent repeating */
+    background-attachment: fixed; /* Add this to keep background fixed while scrolling */
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+    transition: background-image 0.5s ease-in-out; /* Add smooth transition between images */
+}
+.headingArea, .taskArea, .task-container {
+    /* Add this to all container elements */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    background-color: rgba(177, 179, 241, 0.8); /* Make backgrounds slightly transparent */
 }
 
-h1 {
-    font-family: Georgia;
-    font-style: italic;
-    text-align: center;
-}
-
-h2 {
-    font-family: sans-serif;
-    font-style: oblique;
-    text-align: center;
-}
-
-h3 {
-    background-color: rgb(122, 155, 233);
-    margin: 0.5%;
-    padding: 10px;
-    color: black;
-    text-align: center;
-}
-
+/* Modify existing .headingArea */
 .headingArea {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100px;
     margin: auto;
-    background-color: rgb(177, 179, 241);
+    /* background-color: rgb(177, 179, 241); */ /* Replace with: */
+    background-color: rgba(177, 179, 241, 0.8);
+    border-radius: 10px; /* Optional: add rounded corners */
 }
 
+/* Modify existing .taskArea */
 .taskArea {
     display: flex;
     height: 50px;
-    background-color: rgb(123, 132, 135);
+    /* background-color: rgb(123, 132, 135); */ /* Replace with: */
+    background-color: rgba(123, 132, 135, 0.9);
     font-family: Verdana;
     color: black;
     padding: 10px;
     justify-content: center;
     align-items: center;
+    border-radius: 5px; /* Optional: add rounded corners */
 }
 
-.taskArea input {
-    flex-grow: 1;
-    margin-right: 10px;
-    padding: 5px;
-}
-
-.task-list {
-    list-style-type: none;
-    padding: 0;
-}
-
+/* Modify existing .task-container */
 .task-container {
     display: flex;
     align-items: center;
     margin-bottom: 5px;
-    background-color: white;
+    /* background-color: white; */ /* Replace with: */
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 5px;
     border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
 }
 
-.task-item {
-    flex-grow: 1;
-    margin-right: 10px;
-}
-
-.completed {
-    text-decoration: line-through;
-    color: gray;
-}
-
-button {
-    margin-left: 5px;
-    padding: 5px 10px;
-    cursor: pointer;
+/* Add a new style for h3 to make it more readable on any background */
+h3 {
+    background-color: rgba(122, 155, 233, 0.9);
+    margin: 0.5%;
+    padding: 10px;
+    color: black;
+    text-align: center;
+    border-radius: 5px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
